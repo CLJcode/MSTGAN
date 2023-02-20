@@ -15,9 +15,9 @@ def h5_read_data(filename, dataset):
         return dset[:]
 
 
-def get_allfile(path):  # 获取所有文件
+def get_allfile(path):  
     all_file = []
-    for f in os.listdir(path):  # listdir返回文件中所有目录
+    for f in os.listdir(path):  # listdir
         f_name = os.path.join(path, f)
         all_file.append(f_name)
     return all_file
@@ -56,7 +56,7 @@ class NMSELoss(nn.Module):
         return nmse
 
 
-def get_dataset(path_test, model_path, device, batch_size, slot=2, T=5):  # 获取所有文件
+def get_test(path_test, model_path, device, batch_size, slot=2, T=5):  
 
     with torch.no_grad():
         net_g = torch.load(model_path, map_location='cuda:0').to(device)
@@ -79,7 +79,7 @@ def get_dataset(path_test, model_path, device, batch_size, slot=2, T=5):  # 获�
         test_dataset = TensorDataset(test_data, test_label)
         test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=True)
 
-        criterionNMSE_test = NMSELoss(reduction='sum').to(device)  # nn.MSELoss()
+        criterionNMSE_test = NMSELoss(reduction='sum').to(device) 
 
         # val
         total_nmse = 0
@@ -114,7 +114,7 @@ if __name__ == '__main__':
     T: int = 10  #dataset T
     batch_size = 64
 
-    y_test_nmse = get_dataset(path_test, model_path, device, batch_size, slot=slot, T=T)
+    y_test_nmse = get_test(path_test, model_path, device, batch_size, slot=slot, T=T)
 
     x = floatrange(0, 20, 2.5)
     l1, = plt.plot(x, y_test_nmse, marker='.', color='#1661ab', linestyle='dotted')
