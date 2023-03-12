@@ -16,7 +16,7 @@ The netD_structure.pth is only used to show structure detail.
 
 ## 2. Dataset with T=10
 ### 2.1 ModelData
-https://drive.google.com/file/d/1-49QaSx9e70O34eJcUvtT_x-gjfChAPt/view?usp=sharing
+https://drive.google.com/file/d/1-70BqTeIiMU9PRmNj-mlJHm38rzunzRl/view?usp=sharing
 ### 2.2 TestData
 https://drive.google.com/file/d/1-3GLvcyN2G_XCmRlyetwDlqteMQus2Ml/view?usp=sharing
 
