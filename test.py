@@ -60,7 +60,6 @@ def get_test(path_test, model_path, device, batch_size, slot=2, T=5):
 
     with torch.no_grad():
         net_g = torch.load(model_path, map_location='cuda:0').to(device)
-        print(net_g)
 
     y_test_nmse = []
 
