@@ -104,11 +104,11 @@ if __name__ == '__main__':
     print(opt)
     device = torch.device("cuda:0" if opt.cuda else "cpu")
 
-    path = './SISOCDL_TestData/test_SinglePilot/'
+    path = './SISOCDL_TestData/test_DualPilot/'
     path_test = path + 'test_30km_B_300ns_slot10'
 
     slot = 5  #network T
-    model_path = "./checkpoint/netG_SinglePilot_T5.pth"
+    model_path = "./checkpoint/netG_DualPilot_T5.pth"
 
     T: int = 10  #dataset T
     batch_size = 64
